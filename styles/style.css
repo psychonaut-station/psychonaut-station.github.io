@@ -1,0 +1,396 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Segoe UI", sans-serif;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  background-color: #2b1d2c;
+  background-image: url(../images/wallpaper-min.png);
+  background-size: cover;
+  filter: blur(3px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform-origin: center;
+  transform: scale(1.03);
+  transition: all 180s linear;
+  background-position: 0px 0px;
+  display: block;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.absolute-alert {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+#background:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 195, 255, 0.115);
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #2c9de9;
+  }
+
+  to {
+    box-shadow: 0 0 10px 10px #02a9f7;
+  }
+}
+
+.loading-container {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 5%;
+  z-index: 5;
+  color: #fff;
+  font-family: Arial;
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.title-info {
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.gap15 {
+  gap: 15px;
+}
+
+.top-buffer {
+  margin-top: 20px;
+}
+
+.big-top-buffer {
+  margin-top: 40px;
+}
+
+.spacer {
+  height: 1.5em;
+  width: 100%;
+}
+
+.btn-secondary {
+  background-color: #097fb652;
+  border-color: #ffffff3f;
+}
+
+.btn-secondary.active {
+  background-color: #0a98da !important;
+  border-color: rgba(202, 202, 202, 0.534) !important;
+}
+
+.btn-secondary a {
+  color: #fff !important;
+  text-decoration: none;
+  background-color: none;
+}
+
+.btn-secondary:hover {
+  background-color: #0980b6 !important;
+  border-color: #00aeff !important;
+}
+
+.contentcard {
+  position: relative;
+  width: 65%;
+  background-color: rgba(0, 0, 0, 0.63);
+  padding: 0;
+}
+
+#discordDiv {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+}
+
+#discord {
+  justify-content: center;
+  text-align: center;
+  color: rgba(211, 211, 211, 0.842);
+  font-size: 1rem;
+}
+
+#discord a {
+  color: rgba(211, 211, 211, 0.842);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4gaVc.ttf) format('truetype');
+}
+
+#server-list {
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+#server-list>.server-list__container {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px #e4e5e9;
+  border-radius: 12px;
+  padding: 30px 0px;
+}
+
+#server-list>.server-list__container>.server-panel {
+  width: 100%;
+  transition: 0.2s ease background-color;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+#server-list>.server-list__container>.server-panel.running {
+  height: 240px;
+}
+
+#server-list>.server-list__container>.server-panel:hover {
+  background-color: #f4f7f7;
+  transition: 0.2s ease background-color;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info {
+  width: 100%;
+  position: relative;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents {
+  margin-left: 20px;
+  top: 50%;
+  width: 100%;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.status {
+  float: right;
+  margin-right: 40px;
+  z-index: 9;
+  color: white;
+  margin-top: 10px;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.status>.disabled {
+  background-color: #9fa7a7;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.status>.busy {
+  background-color: #8ee12a;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.status>.offline {
+  background-color: #ff806c;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.execution_percent {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  margin-top: -1rem;
+  font-weight: 800;
+  color: #b4e876;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #6f7878;
+  text-transform: uppercase;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__host {
+  font-size: 0.875rem;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__host>.label {
+  float: left;
+  width: 50px;
+  font-weight: 400;
+  color: #b8c1c1;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__host>.host-name {
+  font-weight: 300;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info-canlist {
+  font-size: 0.875rem;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info-canlist>.label {
+  float: left;
+  width: 50px;
+  font-weight: 400;
+  color: #b8c1c1;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info-canlist>.list-name {
+  font-weight: 300;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info-backend {
+  font-size: 0.875rem;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info-backend>.label {
+  float: left;
+  font-weight: 400;
+  color: #6b6b6b;
+  margin-right: 5px;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info-backend>.list-name {
+  font-weight: 300;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__filtertags {
+  margin-top: 10px;
+  padding-bottom: 12px;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__filtertags>.filtertag {
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: #33b249;
+  font-size: 0.75rem;
+  transition-duration: 0.4s;
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+}
+
+#server-list>.server-list__container>.server-panel>.server-info>.server-info__contents>.server-info__filtertags>.filtertag:hover {
+  background-color: #177927;
+}
+
+button:focus {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info {
+  height: 120px;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #f5f7f7;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-execution-percentage {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #6f7878;
+  float: left;
+  width: 64px;
+  text-align: center;
+  margin-left: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-execution-percentage.warning {
+  color: #b4e876;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-info__contents {
+  left: 104px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-info__contents>.job-label {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #8c9696;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-info__contents>.job-name {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #6f7878;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-info__contents>.job-details {
+  font-size: 0.875rem;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-info__contents>.job-details>.label {
+  float: left;
+  color: #b8c1c1;
+  margin-right: 8px;
+}
+
+#server-list>.server-list__container>.server-panel>.job-info>.job-info__contents>.job-details>.detail-value {
+  font-weight: 300;
+}
