@@ -83,8 +83,8 @@ const refresh = () => {
         dataType: 'json',
         success: function (data) {
             if (data?.reason == "success" && data?.status == 1) {
-                $(".server-list__container").empty()
                 if (data.response) {
+                    $(".server-list__container").empty()
                     data.response.forEach(server => {
                         $(".server-list__container").append(serverTemplate(server.server_status, server.name, server.map, server.players, server.round_id, server.round_duration, server.gamestate, server.connection_info))
                     });
