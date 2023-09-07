@@ -84,13 +84,15 @@ const refresh = () => {
         success: function (data) {
             if (data?.reason == "success" && data?.status == 1) {
                 $(".server-list__container").empty()
-                data.response.forEach(server => {
-                    $(".server-list__container").append(serverTemplate(server.server_status, server.name, server.map, server.players, server.round_id, server.round_duration, server.gamestate, "185.198.75.209:3131"))
-                });
-                if (data.response.length <= 0) {
-                    $(".server-list__container").append(`<p class="text-center lead">Aktif bir sunucu bulunamadı.</p>`)
+                if (data.response) {
+                    data.response.forEach(server => {
+                        $(".server-list__container").append(serverTemplate(server.server_status, server.name, server.map, server.players, server.round_id, server.round_duration, server.gamestate, server.connection_info))
+                    });
+                    if (data.response.length <= 0) {
+                        $(".server-list__container").append(`<p class="text-center lead">Aktif bir sunucu bulunamadı.</p>`)
+                    }
+                    $("#alert-box").slideUp()
                 }
-                $("#alert-box").slideUp()
             } else {
                 $("#alert-box").slideDown().text("API hatası oluştu.")
             }
