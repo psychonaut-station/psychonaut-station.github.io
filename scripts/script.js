@@ -79,7 +79,7 @@ const refresh = () => {
     ajaxLoading = true
     $.ajax({
         type: 'GET',
-        url: 'https://api.psychonautstation.com/v1/server',
+        url: 'https://api.turkb.us/v1/server',
         dataType: 'json',
         success: function (data) {
             if (data?.reason == "success" && data?.status == 1) {
