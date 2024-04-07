@@ -30,7 +30,7 @@ $(document).ready(function () {
     setInterval(refresh, 5000);
 
     $("#discord").on("click", function () {
-        window.open("https://discord.gg/psychonaut")
+        window.open("https://discord.gg/ErFmSgzMkt")
     })
 });
 
