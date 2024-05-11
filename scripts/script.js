@@ -79,23 +79,18 @@ const refresh = () => {
     ajaxLoading = true
     $.ajax({
         type: 'GET',
-        url: 'https://api.turkb.us/v1/server',
+        url: 'https://api.turkb.us/v2/server',
         dataType: 'json',
         success: function (data) {
-            if (data?.reason == "success" && data?.status == 1) {
-                if (data.response) {
-                    $(".server-list__container").empty()
-                    data.response.forEach(server => {
-                        $(".server-list__container").append(serverTemplate(server.server_status, server.name, server.map, server.players, server.round_id, server.round_duration, server.gamestate, server.connection_info))
-                    });
-                    if (data.response.length <= 0) {
-                        $(".server-list__container").append(`<p class="text-center lead">Aktif bir sunucu bulunamadı.</p>`)
-                    }
-                    $("#alert-box").slideUp()
-                }
+            $(".server-list__container").empty()
+            if (data.length === 0) {
+                $(".server-list__container").append(`<p class="text-center lead">Aktif bir sunucu bulunamadı.</p>`)
             } else {
-                $("#alert-box").slideDown().text("API hatası oluştu.")
+                data.forEach(server => {
+                    $(".server-list__container").append(serverTemplate(server.server_status, server.name, server.map, server.players, server.round_id, server.round_duration, server.gamestate, server.connection_info))
+                });
             }
+            $("#alert-box").slideUp()
             ajaxLoading = false
         },
         error: function (jqXHR, status, error) {
