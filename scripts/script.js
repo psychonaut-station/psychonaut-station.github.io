@@ -27,7 +27,7 @@ const getGameState = (state) => {
 
 $(document).ready(function () {
     refresh()
-    setInterval(refresh, 5000);
+    setInterval(refresh, 30000);
 
     $("#discord").on("click", function () {
         window.open("https://discord.gg/ErFmSgzMkt")
