@@ -34,7 +34,7 @@ $(document).ready(function () {
     })
 
     $("#wiki").on("click", function () {
-        window.open("https://wiki.turkb.us")
+        location.href = "https://wiki.turkb.us"
     })
 });
 
