@@ -32,6 +32,10 @@ $(document).ready(function () {
     $("#discord").on("click", function () {
         window.open("https://discord.gg/ErFmSgzMkt")
     })
+
+    $("#wiki").on("click", function () {
+        window.open("https://wiki.turkb.us")
+    })
 });
 
 const serverTemplate = (active, name, map, userCount, roundId, roundTime, roundState, ip) => {
